@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>브레인 사고력 올림피아드 참가 신청 · 아이브레인 생각의고수 대구동부지사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=IBM+Plex+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16213E;
+    --ink-soft:#4A5578;
+    --paper:#EEF1F8;
+    --card:#FFFFFF;
+    --amber:#FFC93C;
+    --amber-deep:#E8A800;
+    --coral:#FF6B57;
+    --blue:#4C6FFF;
+    --line:#DDE2F0;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Noto Sans KR',sans-serif;
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(rgba(76,111,255,0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(76,111,255,0.07) 1px, transparent 1px);
+    background-size:26px 26px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:520px;margin:0 auto;padding-bottom:56px;}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:#fff;
+    padding:44px 26px 40px;
+    overflow:hidden;
+    border-radius:0 0 28px 28px;
+  }
+  .hero .symbol{
+    position:absolute;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:700;
+    color:#fff;
+    opacity:0.08;
+    user-select:none;
+    pointer-events:none;
+  }
+  .s1{top:8px;left:-6px;font-size:64px;transform:rotate(-12deg);}
+  .s2{top:110px;right:-10px;font-size:80px;transform:rotate(9deg);}
+  .s3{bottom:6px;left:36%;font-size:46px;transform:rotate(6deg);}
+  .s4{top:36px;right:78px;font-size:30px;transform:rotate(-8deg);}
+
+  .badge{
+    position:relative;
+    display:inline-block;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.25);
+    color:var(--amber);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:0.02em;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    position:relative;
+    font-family:'Black Han Sans',sans-serif;
+    font-weight:400;
+    font-size:32px;
+    line-height:1.35;
+    margin:0 0 12px;
+    letter-spacing:-0.01em;
+  }
+  .hero p{
+    position:relative;
+    margin:0;
+    font-size:14.5px;
+    line-height:1.6;
+    color:rgba(255,255,255,0.72);
+  }
+  .event-info{
+    position:relative;
+    margin-top:20px;
+    display:inline-flex;
+    flex-direction:column;
+    gap:8px;
+    background:rgba(255,255,255,0.09);
+    border:1px solid rgba(255,255,255,0.18);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+  .event-row{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:700;
+    font-size:14px;
+    color:var(--amber);
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .event-icon{font-family:'Noto Sans KR',sans-serif;font-size:14px;}
+
+  /* CARD / STEP */
+  .card{
+    background:var(--card);
+    margin:20px 18px 0;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    padding:26px 22px 28px;
+    box-shadow:0 6px 20px rgba(22,33,62,0.05);
+  }
+  .step-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:700;
+    font-size:12.5px;
+    color:var(--blue);
+    letter-spacing:0.08em;
+    margin-bottom:6px;
+  }
+  .card h2{
+    font-size:19px;
+    margin:0 0 20px;
+    font-weight:900;
+  }
+  label{
+    display:block;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+    margin-top:18px;
+  }
+  label:first-of-type{margin-top:0;}
+  .row{display:flex;gap:10px;}
+  .row > div{flex:1;}
+  input[type=text],input[type=tel],input[type=date],select{
+    width:100%;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:15.5px;
+    padding:13px 14px;
+    border-radius:12px;
+    border:1.5px solid var(--line);
+    background:#FBFCFE;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .15s;
+  }
+  input:focus,select:focus{border-color:var(--blue);background:#fff;}
+  input::placeholder{color:#A9B0C7;}
+
+  /* FEE CARD */
+  .fee-card{
+    background:linear-gradient(180deg,#1B2A4E,#16213E);
+    border-radius:16px;
+    padding:22px 20px;
+    color:#fff;
+    margin-bottom:4px;
+  }
+  .fee-label{font-size:13px;color:rgba(255,255,255,0.65);font-weight:700;}
+  .fee-amount{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:700;
+    font-size:34px;
+    display:block;
+    margin:4px 0 4px;
+  }
+  .fee-amount small{font-size:16px;font-weight:500;margin-left:2px;}
+  .fee-note{
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--amber);
+    background:rgba(255,201,60,0.12);
+    border:1px solid rgba(255,201,60,0.3);
+    border-radius:10px;
+    padding:9px 12px;
+    margin:12px 0 18px;
+  }
+  .account-box{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:12px;
+    padding:16px 16px 14px;
+  }
+  .bank-name{font-size:12.5px;color:rgba(255,255,255,0.6);font-weight:700;}
+  .acc-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:700;
+    font-size:21px;
+    display:block;
+    margin:3px 0 2px;
+    letter-spacing:0.01em;
+  }
+  .acc-name{font-size:12.5px;color:rgba(255,255,255,0.6);}
+  .copy-btn{
+    width:100%;
+    margin-top:12px;
+    padding:11px;
+    border-radius:9px;
+    border:none;
+    background:rgba(255,255,255,0.14);
+    color:#fff;
+    font-weight:700;
+    font-size:13.5px;
+    cursor:pointer;
+  }
+  .copy-btn.copied{background:var(--amber);color:var(--ink);}
+
+  .agree{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    margin-top:20px;
+    font-size:13px;
+    font-weight:500;
+    color:var(--ink-soft);
+    line-height:1.55;
+  }
+  .agree input{margin-top:3px;width:17px;height:17px;flex-shrink:0;}
+  .fineprint{
+    font-size:11.5px;
+    color:#9AA1BC;
+    line-height:1.6;
+    margin-top:14px;
+  }
+
+  .submit-btn{
+    display:block;
+    width:calc(100% - 36px);
+    margin:24px 18px 0;
+    padding:17px;
+    border:none;
+    border-radius:14px;
+    background:var(--amber);
+    color:var(--ink);
+    font-size:16.5px;
+    font-weight:900;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(255,201,60,0.35);
+  }
+  .submit-btn:active{transform:translateY(1px);}
+  .submit-btn:disabled{opacity:0.55;box-shadow:none;}
+
+  /* SUCCESS */
+  .success{
+    margin:20px 18px 0;
+    background:var(--ink);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:36px 24px;
+    text-align:center;
+  }
+  .success .mark{font-size:40px;margin-bottom:10px;}
+  .success h3{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:22px;margin:0 0 10px;}
+  .success p{font-size:13.5px;color:rgba(255,255,255,0.7);line-height:1.7;margin:0;}
+
+  footer{text-align:center;margin-top:30px;}
+  #adminToggle{
+    background:none;border:none;color:#9AA1BC;font-size:12px;
+    text-decoration:underline;cursor:pointer;padding:8px;
+  }
+  .admin-panel{margin:14px 18px 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;}
+  .admin-panel h4{margin:0 0 12px;font-size:14px;}
+  .admin-row{border-bottom:1px solid var(--line);padding:10px 0;font-size:12.5px;line-height:1.7;}
+  .admin-row:last-child{border-bottom:none;}
+  .admin-row b{font-size:13.5px;}
+  .admin-empty{font-size:12.5px;color:#9AA1BC;text-align:center;padding:10px 0;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <span class="symbol s1">+</span>
+    <span class="symbol s2">?</span>
+    <span class="symbol s3">×</span>
+    <span class="symbol s4">=</span>
+    <div class="badge">아이브레인 생각의고수 · 대구동부지사</div>
+    <h1>브레인 사고력<br>올림피아드 참가 신청</h1>
+    <p>참가 정보를 입력한 뒤 참가비를 본사 계좌로 직접 입금해 주세요.</p>
+    <div class="event-info">
+      <div class="event-row"><span class="event-icon">📅</span>2026.10.18(일) 오전 10시</div>
+      <div class="event-row"><span class="event-icon">📍</span>부산 벡스코(BEXCO)</div>
+    </div>
+  </div>
+
+  <form id="regForm">
+    <div class="card">
+      <div class="step-label">STEP 01</div>
+      <h2>학생 정보</h2>
+
+      <label for="name">학생 이름</label>
+      <input type="text" id="name" placeholder="예: 김민준" required>
+
+      <div class="row">
+        <div>
+          <label for="school">학교</label>
+          <input type="text" id="school" placeholder="예: 대실초" required>
+        </div>
+        <div>
+          <label for="grade">학년</label>
+          <select id="grade" required>
+            <option value="" disabled selected>선택</option>
+            <option>5세</option>
+            <option>6세</option>
+            <option>7세</option>
+            <option>초등 1학년</option>
+            <option>초등 2학년</option>
+            <option>초등 3학년</option>
+            <option>초등 4학년</option>
+            <option>초등 5학년</option>
+            <option>초등 6학년</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="birth">생년월일</label>
+      <input type="date" id="birth" required>
+
+      <label for="guardian">보호자 성함</label>
+      <input type="text" id="guardian" placeholder="예: 김OO" required>
+
+      <label for="phone">보호자 연락처</label>
+      <input type="tel" id="phone" placeholder="010-0000-0000" required>
+    </div>
+
+    <div class="card">
+      <div class="step-label">STEP 02</div>
+      <h2>참가비 입금</h2>
+
+      <div class="fee-card">
+        <span class="fee-label">참가비</span>
+        <span class="fee-amount">40,000<small>원</small></span>
+        <div class="fee-note">현금영수증 원할 시 본사에서 발급됩니다. 따로 요청 바랍니다.</div>
+        <div class="account-box">
+          <span class="bank-name">대구동부지사 입금계좌 · 대구은행</span>
+          <span class="acc-num" id="accNum">010-9016-0580</span>
+          <span class="acc-name">예금주: 아이브레인</span>
+          <button type="button" class="copy-btn" id="copyBtn">계좌번호 복사</button>
+        </div>
+      </div>
+
+      <label for="depositor">입금자명</label>
+      <input type="text" id="depositor" placeholder="실제 입금하신 분 이름" required>
+
+      <label class="agree">
+        <input type="checkbox" id="agree" required>
+        <span>대회 참가 접수를 위한 학생 및 보호자 정보 수집·이용에 동의합니다.</span>
+      </label>
+
+      <p class="fineprint">※ 입금 확인 후 최종 접수가 완료됩니다. 신청자명과 입금자명이 다를 경우 반드시 입금자명을 정확하게 입력해 주세요.</p>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">신청 완료하기</button>
+  </form>
+
+  <div class="success" id="successBox" hidden>
+    <div class="mark">✓</div>
+    <h3>문자 앱이 열립니다</h3>
+    <p>입력하신 신청 내용이 문자에 자동으로 채워집니다.<br>그대로 전송해 주시면 접수가 완료됩니다.</p>
+  </div>
+
+</div>
+
+<script>
+  const form = document.getElementById('regForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const successBox = document.getElementById('successBox');
+  const copyBtn = document.getElementById('copyBtn');
+  const accNum = document.getElementById('accNum').textContent.trim();
+
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(accNum.replace(/-/g,''));
+    } catch (e) {
+      // fallback
+      const ta = document.createElement('textarea');
+      ta.value = accNum.replace(/-/g,'');
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    copyBtn.textContent = '복사되었습니다 ✓';
+    copyBtn.classList.add('copied');
+    setTimeout(() => {
+      copyBtn.textContent = '계좌번호 복사';
+      copyBtn.classList.remove('copied');
+    }, 1800);
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const school = document.getElementById('school').value.trim();
+    const grade = document.getElementById('grade').value;
+    const birth = document.getElementById('birth').value;
+    const guardian = document.getElementById('guardian').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const depositor = document.getElementById('depositor').value.trim();
+
+    const message =
+`[브레인 사고력 올림피아드 참가 신청]
+학생 이름: ${name}
+학교: ${school}
+학년: ${grade}
+생년월일: ${birth}
+보호자 성함: ${guardian}
+보호자 연락처: ${phone}
+입금자명: ${depositor}`;
+
+    const academyPhone = '01090160580';
+    const smsLink = /iPhone|iPad|iPod/i.test(navigator.userAgent)
+      ? `sms:${academyPhone}&body=${encodeURIComponent(message)}`
+      : `sms:${academyPhone}?body=${encodeURIComponent(message)}`;
+
+    form.hidden = true;
+    successBox.hidden = false;
+    window.location.href = smsLink;
+  });
+</script>
+</body>
+</html>
